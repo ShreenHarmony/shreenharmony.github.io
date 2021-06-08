@@ -1,15 +1,27 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
+/hugo
+docs/public*
+/.idea
+hugo.exe
 *.test
+*.prof
+nohup.out
+cover.out
+*.swp
+*.swo
+.DS_Store
+*~
+vendor/*/
+*.bench
+*.debug
+coverage*.out
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+dock.sh
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+GoBuilds
+dist
+
+hugolib/hugo_stats.json
+resources/sunset.jpg
+
+vendor
+node_modules
