@@ -1,0 +1,5 @@
+baseURL = "https://shreenharmony.co.uk"
+languageCode = "en-uk"
+title = "Shreen Harmony"
+publishDir = "docs"
+staticDir = ["static"]
