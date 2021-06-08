@@ -1,0 +1,43 @@
+{
+  "dir": "ltr",
+  "lang": "en-uk",
+  "name": "Out Of Order",
+  "display": "standalone",
+  "short_name": "Out Of Order",
+  "theme_color": "#C62129",
+  "description": "Four piece Indie Rock band, based on the south coast of England",
+  "orientation": "portrait",
+  "background_color": "#C62129",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "start_url": "/",
+
+  "icons": [
+    {
+      "src": "/appicons/Icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/appicons/Icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/appicons/Icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/appicons/Icon-196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "/appicons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+

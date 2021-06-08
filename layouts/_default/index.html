@@ -1,0 +1,73 @@
+{{ define "title" }} Out Of Order Band {{end}} {{ define "main" }}
+<div class="speech-bubble">
+  <a href="/contact">
+    <h4>Click to get in touch!</h4>
+  </a>
+</div>
+<div class="ns-gigs">
+  <div class="gallery">
+    <div>
+      <a data-fancybox="" data-ratio="2" href="https://youtu.be/Tb7MtoenHZk">
+        <span class="video-thumbnail">
+           <div class="NSPlay"></div>  
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            data-src="https://img.youtube.com/vi/Tb7MtoenHZk/0.jpg"
+          />   
+        </span>            
+      </a>
+      <p>Voodoo Child (lockdown special)</p>
+    </div>
+
+        <div>
+      <a data-fancybox="" data-ratio="2" href="https://youtu.be/imC2nwPURRc">
+        <span class="video-thumbnail">
+          <div class="NSPlay"></div>          
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            data-src="https://img.youtube.com/vi/imC2nwPURRc/0.jpg"
+          />
+        </span>
+      </a>
+      <p>Good Souls (lockdown special)</p>
+    </div>
+
+      <div>
+      <a data-fancybox="" data-ratio="2" href="https://youtu.be/M9e9febsCcc">
+        <span class="video-thumbnail">
+          <div class="NSPlay"></div>          
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            data-src="https://img.youtube.com/vi/M9e9febsCcc/0.jpg"
+          />
+        </span>
+      </a>
+      <p>Comfortably Numb (lockdown special)</p>
+    </div>
+    </div>
+  <br />
+
+  <h1 class="ns-h1">
+    <!--{{ (now.AddDate -1 0 0).Year }}/{{ substr (now.Year) 2 2 }}/{{ substr ((now.AddDate +1 0 0).Year) 2 2 }}&nbsp;Gigs -->
+    {{ (now.AddDate -2 0 0).Year }}&nbsp;-&nbsp;{{ (now.AddDate 0 0 0).Year }}&nbsp;Gigs
+  </h1>
+  <ul>
+    <!-- prettier-ignore -->
+    {{ range sort $.Site.Data.gigs "Date" "desc" }}
+    {{ $dateformat := now.Format "2006-01-02" }}
+    {{ if gt .Date "2019-01-01" }}
+        {{ if gt .Date $dateformat }}
+    <li class="ns-notpassed">
+      {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+      <a href="{{ .URL }}" target="_blank">{{ .Location}}</a>
+    </li>
+    {{ else }}
+    <li class="ns-strikethrough">
+      {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+      <a href="{{ .URL }}" target="_blank">{{ .Location}}</a>
+    </li>
+    {{ end }} {{ end }} {{ end }}
+    <!-- prettier-ignore-end-->
+  </ul>
+</div>
+{{end}}

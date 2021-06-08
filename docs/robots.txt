@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://outoforderband.co.uk/sitemap.xml

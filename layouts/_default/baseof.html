@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    {{ partial "criticalcss.html" . }}
+    <title>{{ block "title" . }}{{ end }}</title>
+    <meta
+      name="Keywords"
+      content="Out Of Order, Indie Rock, Live Music, UK, South Of England, Rock, Funk, Acoustic"
+    />
+    <meta
+      name="Description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="normansolutions.co.uk" />
+    <meta name="language" content="EN" />
+    <meta name="Classification" content="" />
+    <meta
+      name="copyright"
+      content="Copyright (c) {{now.Year}} 'normansolutions.co.uk' All rights reserved."
+    />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="document-classification" content="Music" />
+    <meta name="document-type" content="Public" />
+    <meta name="document-rating" content="Safe for Kids" />
+    <meta name="document-distribution" content="Global" />
+    <link rel="me" type="text/html" href="https://twitter.com/OutOfOrderUK" />
+    <link
+      type="application/rsd+xml"
+      rel="edituri"
+      title="RSD"
+      href="robots.txt"
+    />
+    <link rel="canonical" href="https://OutOfOrderBand.co.uk" />
+    <meta name="application-name" content="Out Of Order" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <meta property="og:title" content="Out Of Order Band" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+    <meta
+      property="og:image"
+      content="https://outoforderband.co.uk/appicons/OutOfOrderLogo568.jpg"
+    />
+    <meta property="og:url" content="https://OutOfOrderBand.co.uk" />
+
+    <meta name="twitter:title" content="Out Of Order Band" />
+    <meta
+      name="twitter:description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+    <meta name="twitter:image" content="/appicons/OutOfOrderLogo568.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display&text=IndieRockbandfromthesouthofEngland"
+      rel="stylesheet"
+    />
+
+    {{ partial "style.html" . }}
+    <!--[if IE]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.2.0/es5-shim.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <![endif]-->
+
+    <!-- ns-to detect if can use webp and avif -->
+    <script>
+      !(function (document) {
+        "use strict";
+        var webpImage,
+          avifImage =
+            "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAF0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgS0AAAAAABNjb2xybmNseAACAAIAAIAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAGVtZGF0EgAKBzgAPtAgIAkyUBAAAPWc41TP///4gHBX9H8XVK7gGeDllq8TYARA+8Tfsv7L+zPE24eIoIzE0WhHbrqcrTK9VEgEG/hwgB5rdCbvP8g3KYPdV88CvPJnptgQ",
+          webpClass = "webp",
+          avifClass = "avif";
+        function alreadyTested(format) {
+          if (window.sessionStorage) {
+            var test = window.sessionStorage.getItem(format + "Support");
+            if ("false" === test || "true" === test) return "true" === test;
+          }
+          return null;
+        }
+        function testFormat(format, imageSrc, callback) {
+          var tested = alreadyTested(format);
+          if (null === tested) {
+            var image = new Image();
+            return (
+              (image.onload = image.onerror = function () {
+                callback(format, 2 === image.height);
+              }),
+              void (image.src = imageSrc)
+            );
+          }
+          addClass(format, tested);
+        }
+        function addClass(format, support) {
+          if (support) {
+            var el = document.documentElement;
+            el.classList
+              ? el.classList.add("webp" === format ? "webp" : "avif")
+              : (el.className += " " + format == "webp" ? "webp" : "avif"),
+              window.sessionStorage.setItem(format + "Support", !0);
+          } else window.sessionStorage.setItem(format + "Support", !1);
+        }
+        testFormat(
+          "webp",
+          "data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA",
+          addClass
+        ),
+          testFormat("avif", avifImage, addClass);
+      })(document);
+    </script>
+
+    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  </head>
+  <body>
+    <!-- prettier-ignore-->
+    {{ partial "menu.html" . }}
+    {{ partial "header.html" . }}
+
+    {{ block "main" . }} 
+    
+    {{ end }} 
+    
+    {{ partial "footer" . }}   
+
+  
+    {{ partial "pwa.html" . }}
+    {{ partial "script.html" . }}
+    <!-- prettier-ignore-end-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-125816832-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-125816832-1");
+    </script>
+  </body>
+</html>

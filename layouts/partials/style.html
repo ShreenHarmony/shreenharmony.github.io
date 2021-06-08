@@ -1,0 +1,34 @@
+<!-- prettier-ignore -->
+{{$normalize := resources.Get "normalize.scss" }}
+{{$milligram := resources.Get "milligram.min.scss" }}
+{{$fancybox := resources.Get "jquery.fancybox.css" }}
+{{$main := resources.Get "main.scss" }}
+
+{{ $css_options := dict "targetPath" "css/main.css" }}
+
+{{ $css_options = merge $css_options (dict "outputStyle" "compressed") }}
+
+{{ $sass_template := slice $normalize $milligram $main | resources.Concat "main_concat.scss"}}
+
+{{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS  }}
+
+{{ $style :=  slice $style $fancybox | resources.Concat "main_scss_and_css" | toCSS $css_options  }}
+
+{{ $style = $style | postCSS | minify | fingerprint "sha256" }}
+<!-- prettier-ignore-end -->
+
+<link
+  rel="preload"
+  href="{{ $style.RelPermalink }}?v=ns-fingerprint"
+  integrity="{{$style.Data.Integrity}}"
+  as="style"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="{{ $style.RelPermalink }}?v=ns-fingerprint"
+  integrity="{{$style.Data.Integrity}}"
+  media="print"
+  onload="this.media='all'"
+  crossorigin="anonymous"
+/>

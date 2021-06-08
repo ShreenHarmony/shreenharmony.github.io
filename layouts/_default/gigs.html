@@ -1,0 +1,28 @@
+{{ define "title" }} Out Of Order Band Gigs {{end}} {{ define "main" }}
+<div class="speech-bubble">
+  <a href="/setlist">
+    <h4>Click for sample set list!</h4>
+  </a>
+</div>
+<div class="ns-gigs">
+  <h1 class="ns-h1">All Gigs</h1>
+  <ul>
+    <!-- prettier-ignore -->
+    {{ range sort $.Site.Data.gigs "Date" "desc" }}
+    {{ $dateformat := now.Format "2006-01-02" }}
+
+        {{ if gt .Date $dateformat }}
+    <li class="ns-notpassed">
+      {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+      <a href="{{ .URL }}" target="_blank">{{ .Location}}</a>
+    </li>
+    {{ else }}
+    <li class="ns-strikethrough">
+      {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+      <a href="{{ .URL }}" target="_blank">{{ .Location}}</a>
+    </li>
+    {{ end }} {{ end }}
+    <!-- prettier-ignore-end-->
+  </ul>
+</div>
+{{ end }}

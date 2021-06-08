@@ -1,0 +1,548 @@
+@import "_include-media.scss";
+
+$ooob-red: #c62129;
+$ooob-white: #fff;
+$ooob-black: #000;
+
+/* Basics */
+
+body,
+html {
+  height: 100%;
+  background-color: $ooob-red;
+  color: $ooob-white;
+  text-size-adjust: none;
+}
+
+.ns-h1 {
+  font-size: 2em;
+}
+
+.ns-h4 {
+  color: $ooob-black;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: $ooob-black;
+  border: 0.1rem solid $ooob-white;
+}
+
+a {
+  color: darken($ooob-white, 15%);
+}
+
+a:hover {
+  color: lighten($ooob-white, 15%);
+}
+
+a:visited {
+  color: darken($ooob-white, 15%);
+}
+
+/* End Basics */
+
+/* Image Animation */
+
+.notloaded {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.loaded {
+  background: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 400ms ease-in;
+  // Don't animate when the reduced motion accessibility option
+  // has been enabled in the browser or OS. Safari is supporting this
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+/* End Image Animation */
+
+/* Start Menu */
+
+.pie {
+  -webkit-tap-highlight-color: transparent;
+  background: $ooob-black;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 400px;
+  left: -200px;
+  position: absolute;
+  top: -200px;
+  width: 400px;
+  transform: translateX(-200px) translateY(-200px);
+  transition: transform 300ms;
+  z-index: 1;
+}
+.pie-color:hover {
+  opacity: 0.85;
+}
+.pie-color:active {
+  opacity: 0.7;
+}
+.pie1 {
+  clip-path: polygon(200px 200px, 344px 450px, 0 450px);
+  transition-delay: 30ms;
+}
+.pie2 {
+  clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
+  transition-delay: 60ms;
+}
+.pie3 {
+  clip-path: polygon(200px 200px, 450px 0, 450px 344px);
+  transition-delay: 90ms;
+}
+.pie-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pie-color-hyperlink {
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px $ooob-black;
+  font-weight: 700;
+  color: $ooob-white;
+}
+
+.pie-color1 {
+  background: linear-gradient(135deg, $ooob-red, $ooob-red);
+  clip-path: polygon(200px 200px, 344px 450px, 0 450px);
+}
+.pie-color2 {
+  background: linear-gradient(135deg, $ooob-white, $ooob-white);
+  clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
+}
+.pie-color3 {
+  background: linear-gradient(135deg, $ooob-red, $ooob-red);
+  clip-path: polygon(200px 200px, 450px 0, 450px 344px);
+}
+.videos {
+  left: 208px;
+  position: absolute;
+  top: 320px;
+  width: 46px;
+  transform: rotate(77deg);
+}
+.gigging {
+  left: 272px;
+  position: absolute;
+  top: 279px;
+  width: 46px;
+  transform: rotate(46deg);
+  color: $ooob-red;
+}
+.contact {
+  left: 304px;
+  position: absolute;
+  top: 220px;
+  width: 46px;
+  transform: rotate(16deg);
+}
+.menu {
+  -webkit-tap-highlight-color: transparent;
+  background: $ooob-white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 200px;
+  left: -100px;
+  position: absolute;
+  top: -100px;
+  width: 200px;
+  z-index: 1;
+}
+.hamburger {
+  cursor: pointer;
+  height: 46px;
+  left: 58%;
+  position: relative;
+  top: 58%;
+  width: 46px;
+}
+.hamburger path {
+  transition: transform 300ms;
+}
+.hamburger path:nth-child(1) {
+  transform-origin: 25% 29%;
+}
+.hamburger path:nth-child(2) {
+  transform-origin: 50% 50%;
+}
+.hamburger path:nth-child(3) {
+  transform-origin: 75% 72%;
+}
+.hamburger path:nth-child(4) {
+  transform-origin: 75% 29%;
+}
+.hamburger path:nth-child(5) {
+  transform-origin: 25% 72%;
+}
+.active .pie {
+  transform: translateX(0) translateY(0);
+}
+.active .hamburger path:nth-child(1) {
+  transform: rotate(45deg);
+}
+.active .hamburger path:nth-child(2) {
+  transform: scaleX(0);
+}
+.active .hamburger path:nth-child(3) {
+  transform: rotate(45deg);
+}
+.active .hamburger path:nth-child(4) {
+  transform: rotate(-45deg);
+}
+.active .hamburger path:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+/* End Menu */
+
+/* Header*/
+
+/* The hero image */
+
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.jpg?v=fingerprint");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.webp .hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.webp?v=fingerprint");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.avif .hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.avif?v=fingerprint");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include media(">1366px") {
+    width: 40%;
+  }
+  @include media(">=desktop", "<=1366px", "portrait") {
+    width: 80%;
+  }
+  @include media(">=desktop", "<=1366px", "landscape") {
+    width: 40%;
+  }
+  @include media("<desktop", "portrait") {
+    width: 80%;
+  }
+  @include media("<desktop", "landscape") {
+    width: 50%;
+  }
+}
+
+.ns-tagline {
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 2.1em;
+}
+
+.ns-social {
+  padding-top: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+/* End Header */
+
+/* Contact & Setlist */
+.ns-contact-shell,
+.ns-setlist-shell {
+  margin: auto;
+  max-width: 700px;
+  padding: 15px;
+}
+
+.ns-contact,
+.ns-setlist {
+  padding: 15px;
+  background-color: $ooob-white;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  [class^="icon"] {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.ns-contact-details,
+.ns-setlist-details {
+  font-size: 1.4em;
+  color: $ooob-black;
+  text-shadow: 1px 4px 7px rgba(198, 33, 41, 0.38);
+}
+
+.ns-contact a {
+  color: $ooob-red;
+}
+
+.ns-contact a:visited {
+  color: $ooob-red;
+}
+
+.ns-contact a:hover {
+  color: lighten($ooob-black, 15%);
+}
+
+.ns-h1-contact,
+.ns-h1-setlist {
+  color: $ooob-red;
+}
+
+/* End Contact */
+
+/* Gigs */
+.ns-gigs {
+  padding: 15px;
+  margin: auto;
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+    font-size: 1.1em;
+  }
+}
+
+.ns-nextgig::before {
+  content: "🎸";
+}
+
+.ns-nextgig {
+  text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-red;
+  font-size: 1.3em;
+}
+
+.ns-nextgig::after {
+  content: " (next gig)";
+  font-size: 0.9em;
+}
+
+hr {
+  max-width: 80%;
+  margin: 13px auto;
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 13px $ooob-white;
+}
+
+.ns-strikethrough {
+  text-decoration: line-through;
+  color: darken($ooob-white, 30%);
+
+  a {
+    color: darken($ooob-white, 30%);
+  }
+
+  a:hover {
+    color: lighten($ooob-white, 15%);
+  }
+}
+
+.ns-setlist-popup {
+  color: $ooob-black;
+}
+
+/* End Gigs */
+
+/* Gallery */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0px 30px 5px 30px;
+  max-width: 250px;
+
+  img {
+    box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75);
+  }
+
+  &:before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); 
+    opacity: 0.8;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+
+.NSPlay {
+  background-image:url(/img/play.svg);
+  background-repeat:no-repeat;
+  width:30%;
+  height:30%;
+  position:absolute;
+  left:0%;
+  right:0%;
+  top:0%;
+  bottom:0%;
+  margin:auto;
+  background-size:contain;
+  background-position: center;
+  z-index:10;
+}
+
+/* End Gallery */
+
+/* Contact Bubble */
+
+.speech-bubble {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  max-width: 250px;
+  background: $ooob-black;
+  border-radius: 0.4em;
+  z-index: 10;
+
+  :hover {
+    color: $ooob-white;
+  }
+
+  :visited {
+    color: $ooob-white;
+  }
+
+  :active {
+    color: $ooob-white;
+  }
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-top-color: $ooob-black;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -0.5em;
+  margin-bottom: -1em;
+}
+
+/* End Contact Bubble */
+
+/* Footer */
+
+footer {
+  position: fixed;
+  color: $ooob-white;
+  height: 45px;
+  background-color: $ooob-black;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 9999;
+
+  p {
+    padding-top: 8px;
+  }
+}
+
+/* End Footer */
+
+
+/* Link Tree */
+.ns-linktree-btn{
+  background-color: $ooob-black;
+  border: 1px solid #fff;
+  text-transform: lowercase;
+  font-size: 1em;
+  line-height: 1em;
+  padding:5px;
+ }
+
+ .ns-linktree-btn:hover{
+  background-color: $ooob-black;
+
+ }

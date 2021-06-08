@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{{$jQuery := resources.Get "jQuery.js" }}
+{{$quicklinks := resources.Get "quicklinks.js" }}
+{{$fancyapp := resources.Get "jquery.fancybox.min.js" }}
+{{$main := resources.Get "main.js" }}
+{{ $js := slice $jQuery $quicklinks $fancyapp $main | resources.Concat "js/bundle.js" |resources.Minify }}
+{{ $secureJS := $js | resources.Fingerprint "sha256" }}
+<!-- prettier-ignore-end -->
+
+<script
+  src="{{ $secureJS.RelPermalink }}?v=ns-fingerprint"
+  integrity="{{$secureJS.Data.Integrity}}"
+  defer
+  crossorigin="anonymous"
+></script>
