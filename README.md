@@ -1,2 +1,2 @@
 # shreenharmony.github.io
-Shreen Harmony Website
+Shreen Harmony Choir Website
