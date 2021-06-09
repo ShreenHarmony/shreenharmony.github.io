@@ -1,6 +1,7 @@
 @import "_include-media.scss";
 
 $ooob-red: #c62129;
+$ooob-lightgray: #DCE1E3;
 $ooob-white: #fff;
 $ooob-black: #000;
 
@@ -9,7 +10,7 @@ $ooob-black: #000;
 body,
 html {
   height: 100%;
-  background-color: $ooob-red;
+  background-color: $ooob-lightgray;
   color: $ooob-white;
   text-size-adjust: none;
 }
