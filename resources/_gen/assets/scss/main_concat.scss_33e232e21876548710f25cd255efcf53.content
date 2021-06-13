@@ -920,7 +920,6 @@ a:visited {
   background-image: url("/img/headerTop.avif?v=fingerprint");
   /* Set a specific height */
   height: 50%;
-  max-width: 700px;
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
