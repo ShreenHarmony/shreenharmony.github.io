@@ -950,7 +950,7 @@ a:hover {
 /* End Header */
 /* Contact & Setlist */
 .outershell {
-  padding: 15px; }
+  padding: 5px; }
 
 .ns-contact-shell,
 .ns-main-shell {
