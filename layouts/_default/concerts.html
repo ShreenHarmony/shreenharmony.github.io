@@ -1,11 +1,6 @@
-{{ define "title" }} Out Of Order Band Gigs {{end}} {{ define "main" }}
-<div class="speech-bubble">
-  <a href="/setlist">
-    <h4>Click for sample set list!</h4>
-  </a>
-</div>
-<div class="ns-gigs">
-  <h1 class="ns-h1">All Gigs</h1>
+{{ define "title" }} Shreen Harmony Concerts {{end}} {{ define "main" }}
+<div class="ns-main-shell ns-setlist">
+  <h1 class="ns-h1">Concerts</h1>
   <ul>
     <!-- prettier-ignore -->
     {{ range sort $.Site.Data.gigs "Date" "desc" }}
