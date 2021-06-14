@@ -3,7 +3,7 @@
 $ooob-red: #c62129;
 $ooob-blue: #0595db;
 $ooob-lightgray: #DCE1E3;
-$ooob-lightblue: #f0fcfc;
+$ooob-lightblue: #72a3ad;
 $ooob-white: #fff;
 $ooob-black: #000;
 
@@ -227,7 +227,11 @@ a:visited {
     url("/img/headerTop.jpg?v=fingerprint");
 
   /* Set a specific height */
-  min-height: 80%;
+  height: 50%;
+  max-height:500px;
+  max-width: 1137px;
+  margin:auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
  
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -242,7 +246,12 @@ a:visited {
     url("/img/headerTop.webp?v=fingerprint");
 
   /* Set a specific height */
-  height: 50%; 
+  height: 50%;
+  max-height:500px;
+  max-width: 1137px;
+  margin:auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
+ 
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -257,7 +266,11 @@ a:visited {
     url("/img/headerTop.avif?v=fingerprint");
 
   /* Set a specific height */
-  height: 50%; 
+  height: 50%;
+  max-height:500px;
+  max-width: 1137px;
+  margin:auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -278,7 +291,7 @@ a:visited {
   transform: translate(-50%, -50%);
 
   @include media(">1366px") {
-    width: 40%;
+    width: 40%; 
   }
   @include media(">=desktop", "<=1366px", "portrait") {
     width: 80%;

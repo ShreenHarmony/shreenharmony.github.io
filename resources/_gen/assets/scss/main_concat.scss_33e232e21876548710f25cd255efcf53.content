@@ -707,7 +707,7 @@ img {
 body,
 html {
   height: 100%;
-  background-color: #f0fcfc;
+  background-color: #72a3ad;
   color: #fff;
   text-size-adjust: none; }
 
@@ -897,7 +897,11 @@ a:visited {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: url("/img/headerTop.jpg?v=fingerprint");
   /* Set a specific height */
-  min-height: 80%;
+  height: 50%;
+  max-height: 500px;
+  max-width: 1137px;
+  margin: auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -909,6 +913,10 @@ a:visited {
   background-image: url("/img/headerTop.webp?v=fingerprint");
   /* Set a specific height */
   height: 50%;
+  max-height: 500px;
+  max-width: 1137px;
+  margin: auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -920,6 +928,10 @@ a:visited {
   background-image: url("/img/headerTop.avif?v=fingerprint");
   /* Set a specific height */
   height: 50%;
+  max-height: 500px;
+  max-width: 1137px;
+  margin: auto;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -1078,7 +1090,7 @@ hr {
 
 .ns-strikethrough {
   text-decoration: line-through;
-  color: #71e3e3; }
+  color: #314f55; }
   .ns-strikethrough a {
     color: #b3b3b3; }
   .ns-strikethrough a:hover {
