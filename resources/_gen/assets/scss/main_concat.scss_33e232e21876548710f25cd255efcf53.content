@@ -1028,6 +1028,7 @@ hr {
   position: relative;
   text-align: center;
   margin: auto;
+  color: #fff;
   padding-bottom: 1px;
   max-width: 150px;
   background: #000;
