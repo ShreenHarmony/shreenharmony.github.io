@@ -388,13 +388,16 @@ hr {
 .speech-bubble {
   position: relative;
   text-align: center;
-  margin: auto;
-  color: $ooob-white;
+  margin: auto;  
   padding-bottom: 1px;
   max-width: 150px;
   background: $ooob-black;
   border-radius: 0.4em;
   z-index: 10;
+
+  a {
+    color: $ooob-white;
+  }
 
   :hover {
     color: $ooob-lightgray;

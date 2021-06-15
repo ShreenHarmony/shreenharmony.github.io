@@ -1028,12 +1028,13 @@ hr {
   position: relative;
   text-align: center;
   margin: auto;
-  color: #fff;
   padding-bottom: 1px;
   max-width: 150px;
   background: #000;
   border-radius: 0.4em;
   z-index: 10; }
+  .speech-bubble a {
+    color: #fff; }
   .speech-bubble :hover {
     color: #DCE1E3; }
   .speech-bubble :visited {
