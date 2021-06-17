@@ -32,49 +32,17 @@ body {
   color: $ooob-black;
 }
 
-.button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  background-color: $ooob-black;
-  border: 0.1rem solid $ooob-white;
-}
 
 a {
   color: darken($ooob-blue, 10%);
 }
 
 a:hover {
-  color: lighten($ooob-blue, 5%);
+  color: lighten($ooob-blue, 15%);
 }
 
-a:visited {
-  color: darken($ooob-black, 15%);
-}
 
 /* End Basics */
-
-/* Image Animation */
-
-.notloaded {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.loaded {
-  background: none;
-  opacity: 1;
-  transform: scale(1);
-  transition: all 400ms ease-in;
-  // Don't animate when the reduced motion accessibility option
-  // has been enabled in the browser or OS. Safari is supporting this
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
-}
-
-/* End Image Animation */
 
 /* Start Menu */
 
@@ -229,9 +197,6 @@ a:visited {
 
   /* Set a specific height */
   height: 50%;
-  max-height:500px;
-  max-width: 1137px;
-  margin:auto;
   box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
  
   /* Position and center the image to scale nicely on all screens */
@@ -248,9 +213,6 @@ a:visited {
 
   /* Set a specific height */
   height: 50%;
-  max-height:500px;
-  max-width: 1137px;
-  margin:auto;
   box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
  
 
@@ -268,9 +230,6 @@ a:visited {
 
   /* Set a specific height */
   height: 50%;
-  max-height:500px;
-  max-width: 1137px;
-  margin:auto;
   box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
 
   /* Position and center the image to scale nicely on all screens */
@@ -314,19 +273,6 @@ a:visited {
   }
 }
 
-.ns-tagline {
-  padding-top: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: auto;
-  max-width: 800px;
-  position: relative;
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-family: "Sedgwick Ave Display", cursive;
-  font-size: 2.1em;
-}
-
 .ns-social {
   padding-top: 8px;
   padding-left: 15px;
@@ -341,8 +287,12 @@ a:visited {
 /* End Header */
 
 /* Contact & Setlist */
+
+.outershell{
+  padding:5px;
+}
+
 .ns-contact-shell,
-.ns-setlist-shell,
 .ns-main-shell
 {
   margin: auto;
@@ -392,30 +342,6 @@ a:visited {
   }
 }
 
-.ns-contact-details,
-.ns-setlist-details {
-  font-size: 1.4em;
-  color: $ooob-black;
-  text-shadow: 1px 4px 7px rgba(198, 33, 41, 0.38);
-}
-
-.ns-contact a {
-  color: $ooob-blue;
-}
-
-.ns-contact a:visited {
-  color: $ooob-blue;
-}
-
-.ns-contact a:hover {
-  color: lighten($ooob-black, 15%);
-}
-
-.ns-h1-contact,
-.ns-h1-setlist {
-  color: $ooob-blue;
-}
-
 /* End Contact */
 
 /* Gigs */
@@ -430,20 +356,6 @@ a:visited {
     list-style-type: none;
     font-size: 1.1em;
   }
-}
-
-.ns-nextgig::before {
-  content: "🎸";
-}
-
-.ns-nextgig {
-  text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-blue;
-  font-size: 1.3em;
-}
-
-.ns-nextgig::after {
-  content: " (next gig)";
-  font-size: 0.9em;
 }
 
 hr {
@@ -468,72 +380,24 @@ hr {
   }
 }
 
-.ns-setlist-popup {
-  color: $ooob-black;
-}
-
 /* End Gigs */
 
-/* Gallery */
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.video-thumbnail {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin: 0px 30px 5px 30px;
-  max-width: 250px;
-
-  img {
-    box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75);
-  }
-
-  &:before {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%); 
-    opacity: 0.8;
-    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-}
-
-.NSPlay {
-  background-image:url(/img/play.svg);
-  background-repeat:no-repeat;
-  width:30%;
-  height:30%;
-  position:absolute;
-  left:0%;
-  right:0%;
-  top:0%;
-  bottom:0%;
-  margin:auto;
-  background-size:contain;
-  background-position: center;
-  z-index:10;
-}
-
-/* End Gallery */
 
 /* Contact Bubble */
 
 .speech-bubble {
   position: relative;
   text-align: center;
-  margin: auto;
-  padding: 1px;
-  max-width: 250px;
+  margin: auto;  
+  padding-bottom: 1px;
+  max-width: 150px;
   background: $ooob-black;
   border-radius: 0.4em;
   z-index: 10;
+
+  a {
+    color: $ooob-white;
+  }
 
   :hover {
     color: $ooob-lightgray;

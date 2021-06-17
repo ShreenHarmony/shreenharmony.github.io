@@ -1,12 +1,8 @@
-{{ define "title" }} Out Of Order Band Gigs {{end}} {{ define "main" }}
-<div class="speech-bubble">
-  <a href="/setlist">
-    <h4>Click for sample set list!</h4>
-  </a>
-</div>
-<div class="ns-gigs">
-  <h1 class="ns-h1">All Gigs</h1>
-  <ul>
+{{ define "title" }} Shreen Harmony Concerts {{end}} {{ define "main" }}
+<div class="ns-main-shell ns-setlist">
+  <h1 class="ns-h1">Concerts</h1>
+  <h4>Due to COVID there are currently no concerts planned</h4>
+  {{/*  <ul>
     <!-- prettier-ignore -->
     {{ range sort $.Site.Data.gigs "Date" "desc" }}
     {{ $dateformat := now.Format "2006-01-02" }}
@@ -23,6 +19,6 @@
     </li>
     {{ end }} {{ end }}
     <!-- prettier-ignore-end-->
-  </ul>
+  </ul>  */}}
 </div>
 {{ end }}
