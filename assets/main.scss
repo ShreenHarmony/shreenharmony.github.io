@@ -204,6 +204,8 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+
 }
 
 .webp .hero-image {
@@ -212,7 +214,7 @@ a:hover {
     url("/img/headerTop.webp?v=fingerprint");
 
   /* Set a specific height */
-  height: 50%;
+  height: 50%; 
   box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75);
  
 
@@ -221,6 +223,9 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+
+
 }
 
 .avif .hero-image {
@@ -237,6 +242,8 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+
 }
 
 /* Place text in the middle of the image */
@@ -251,7 +258,7 @@ a:hover {
   transform: translate(-50%, -50%);
 
   @include media(">1366px") {
-    width: 40%; 
+    width: 40%;    
   }
   @include media(">=desktop", "<=1366px", "portrait") {
     width: 80%;
