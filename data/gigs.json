@@ -1,7 +1,12 @@
 [
     {
-       "Date":"2021-12-18",
-       "Location":"Christmas Concert - 12 Noon at Stourhead Gardens",
-       "URL":"https://www.nationaltrust.org.uk/stourhead"
-    }
+       "Date":"2022-06-18",
+       "Location":"Summer Concert - The United Reformed Church, Mere @ 7:30pm",
+       "URL":"https://merewilts.org/?lsvr_listing=united-reformed-church"
+    },
+    {
+      "Date":"2022-07-25",
+      "Location":"The BIg Sing - Rook Lane Chapel, Frome @ 7:30pm",
+      "URL":"https://www.rooklane.org.uk/"
+   }
  ]
