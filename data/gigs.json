@@ -1,12 +1,18 @@
 [
-    {
-       "Date":"2022-06-18",
-       "Location":"Summer Concert - The URC (Church), Mere @ 7:30pm",
-       "URL":"https://merewilts.org/?lsvr_listing=united-reformed-church"
-    },
-    {
-      "Date":"2022-07-25",
-      "Location":"The Big Sing - Rook Lane Chapel, Frome @ 7:30pm",
-      "URL":"https://www.rooklane.org.uk/"
-   }
- ]
+  {
+    "Date": "2022-06-18",
+    "Location": "Summer Concert - The URC (Church), Mere @ 7:30pm",
+    "URL": "https://merewilts.org/?lsvr_listing=united-reformed-church"
+  },
+  {
+    "Date": "2022-07-16",
+    "Location": "West Knoyle Village Fete, West Knoyle @ 2:00pm",
+    "URL": "https://merewilts.org/?lsvr_listing=united-reformed-church"
+  },
+
+  {
+    "Date": "2022-07-25",
+    "Location": "The Big Sing - Rook Lane Chapel, Frome @ 7:30pm",
+    "URL": "https://www.rooklane.org.uk/"
+  }
+]
